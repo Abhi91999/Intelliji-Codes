@@ -2,7 +2,7 @@ package com.example.codingpractice;
 
 import java.util.SortedMap;
 
-class Base {
+class Base extends Thread{
     protected int x;
     private int y;
 
@@ -11,7 +11,7 @@ class Base {
         this.y = y;
     }
 
-    public int getX() {
+    public int getX()  {
         System.out.println("I am setting the base class"+x);
         return x;
     }

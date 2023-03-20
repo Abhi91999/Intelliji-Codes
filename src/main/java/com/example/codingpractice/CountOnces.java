@@ -2,8 +2,8 @@ package com.example.codingpractice;
 
 public class CountOnces {
     public static void main(String[] args) {
-                int nums[] = {0,0,0,2,2,2,2,2,2,2,2,5};
-                int target =2;
+                int nums[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0};
+                int target =0;
                 int[] result = new int[2];
                 int sum = 0;
                 result[0] = findIndx(nums, target, true);
@@ -12,6 +12,7 @@ public class CountOnces {
                 System.out.println(result[1]);
                 for(int i =result[0];i<result[1];i++) {
                     sum += nums[i];
+                    System.out.println("The sum is "+sum);
                 }
         System.out.println(sum);
             }
@@ -30,7 +31,7 @@ public class CountOnces {
                     }
                     if(findFirstVal == true)
                     {
-                        if(nums[mid] >= target)
+                        if(nums[mid] <= target)
                         {
                             end = mid-1;
                         }
@@ -41,7 +42,7 @@ public class CountOnces {
                     }
                     else
                     {
-                        if(nums[mid] <= target)
+                        if(nums[mid] >= target)
                         {
                             start = mid +1;
                         }
