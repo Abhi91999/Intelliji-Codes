@@ -5,6 +5,7 @@ import java.util.ArrayDeque;
 import static java.lang.Long.sum;
 
 /**
+ * Creating a java doc for this package
  * @author AbhishekKumar
  * @version 0.1
  * @see <a href = "https://stackoverflow.com/questions/5920135/printing-hashmap-in-java"> Java Docs </a>
