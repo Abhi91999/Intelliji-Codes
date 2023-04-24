@@ -2,12 +2,7 @@ package com.example.codingpractice;
 interface Bike{
     void bajaj();
     void hero();
-    private void check(){
-        System.out.println("I am special");
-    }
-    default void excep(){
-        System.out.println("I wamt to buy bmw 310gs");
-    }
+
 }
 interface SuperBike extends Bike{
     void ducatti();
@@ -15,7 +10,7 @@ interface SuperBike extends Bike{
 }
 class BuyBike implements SuperBike{
     public void ducatti(){
-        System.out.println("I want to buy ducatti pinaganle");
+        System.out.println("I want to buy ducatti pinagle");
     }
     public void kawasaki(){
         System.out.println("I want to buy kawasaki ninja z1000");
@@ -37,7 +32,8 @@ public class InterfaceInheritance {
         bs.ducatti();
         bs.hero();
         bs.kawasaki();
-        bs.excep();
+
+
     }
 
 }
