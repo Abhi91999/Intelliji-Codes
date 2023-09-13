@@ -110,6 +110,48 @@ public class BinaryTreeInOrd {
         int rightSum = sumOfNodes(root.right);
         return leftSum + rightSum + root.data;
     }
+    public static int heightNode(Node root)
+    {
+        if(root == null){return 0;}
+        int leftHeight = heightNode(root.left);
+        int rightHeight = heightNode(root.right);
+
+        int myHeight = Math.max(leftHeight , rightHeight) +1;
+        return myHeight;
+    }
+    public static int diameterTree(Node root)
+    {
+        if(root == null){return 0;}
+        int diaMeter1 = diameterTree(root.left);
+        int diaMeter2 = diameterTree(root.right);
+        int diaMeter3 = heightNode(root.left) + heightNode(root.right) + 1;
+        return Math.max(diaMeter3, Math.max(diaMeter1, diaMeter2));
+    }
+    static class treeInfo{
+        int ht;
+        int diam;
+        treeInfo(int ht, int diam)
+        {
+            this.ht = ht;
+            this.diam = diam;
+        }
+    }
+    public static treeInfo diameterCheck(Node root){
+        if(root == null)
+        {
+            return new treeInfo(0,0);
+        }
+        treeInfo left = diameterCheck(root.left);
+        treeInfo right = diameterCheck(root.right);
+        int myHeight = Math.max(left.ht, right.ht) +1;
+        int diam1 = left.diam;
+        int diam2 = right.diam;
+        int diam3 = left.ht + right.ht  +1;
+
+        int mydiam = Math.max(Math.max(diam1, diam2), diam3);
+        treeInfo newtreeInfo = new treeInfo(myHeight, mydiam);
+        return newtreeInfo;
+    }
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         Binarytree tree = new Binarytree();
@@ -124,6 +166,9 @@ public class BinaryTreeInOrd {
         levelOrder(root);
         System.out.println(countNode(root));
         System.out.println(sumOfNodes(root));
+        System.out.println(heightNode(root));
+        System.out.println(diameterTree(root));
+        System.out.println(diameterCheck(root).diam);
 
     }
 }
