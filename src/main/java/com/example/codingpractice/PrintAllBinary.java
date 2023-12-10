@@ -1,5 +1,7 @@
 package com.example.codingpractice;
 import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 public class PrintAllBinary {
     public static void main(String[] args) {
         int n = 101;

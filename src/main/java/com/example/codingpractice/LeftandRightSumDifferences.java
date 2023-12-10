@@ -1,5 +1,7 @@
 package com.example.codingpractice;
 
+import java.util.Arrays;
+
 public class LeftandRightSumDifferences {
     public static void main(String[] args) {
 //        int nums[] = {10,4,8,3};

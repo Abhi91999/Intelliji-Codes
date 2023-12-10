@@ -8,9 +8,8 @@ public class FirstNegativeInteger {
         int K=2;
         int N = 5;
         int[] res = printFirstNegativeInteger(A,N,K);
-        for(int i=0;i<res.length;i++)
-        {
-            System.out.println(res[i]);
+        for (int re : res) {
+            System.out.println(re);
         }
     }
     public static int[] printFirstNegativeInteger(int A[], int N, int K)
@@ -19,7 +18,7 @@ public class FirstNegativeInteger {
         int idx =0;
         int windowStart =0;
         int windowEnd =0;
-        Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> q = (Queue<Integer>) new LinkedList();
         for(windowEnd=0; windowEnd<N; windowEnd++)
         {
             if(A[windowEnd] < 0)
@@ -43,6 +42,7 @@ public class FirstNegativeInteger {
                 }
                 windowStart++;
             }
+            windowEnd++;
         }
         return result;
     }
